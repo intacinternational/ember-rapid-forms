@@ -33,6 +33,6 @@ export default Ember.Mixin.create({
   }),
   init: function() {
     this._super(...arguments);
-    Ember.defineProperty(this, 'errors', Ember.computed.alias((`model.errors.${this.get('propertyName')}`)));
+    Ember.defineProperty(this, 'errors', Ember.computed.alias((`model.validations.attrs.${this.get('propertyName')}.messages`)));
   }
 });
